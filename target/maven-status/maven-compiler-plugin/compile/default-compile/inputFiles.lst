@@ -1,0 +1,8 @@
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDao.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDaoImpl.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDaoImpl.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/ClienteMapper.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Cliente.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/DireccionMapper.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Direccion.java
+/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDao.java
