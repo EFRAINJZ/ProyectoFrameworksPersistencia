@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -25,8 +26,6 @@ public class ClienteDaoImplTest {
 	ClienteDao clienteDao;
 	
 	@Test
-
-	
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test para consultar los clientes");
@@ -42,7 +41,7 @@ public class ClienteDaoImplTest {
 		}
 	}
 
-	
+	@Ignore
 	public void pruebaAgregarUnCliente() {
 		Cliente cliente = new Cliente();
 		System.out.println("Test nuevo registro");
@@ -58,6 +57,7 @@ public class ClienteDaoImplTest {
 		}
 	}
 	
+	@Ignore
 	public void pruebaConsultarClientePorId() {
 		System.out.println("test consultar cliente por id");
 		Cliente cliente = new Cliente();
@@ -79,6 +79,7 @@ public class ClienteDaoImplTest {
 		}
 	}
 	
+	@Ignore
 	public void pruebaEliminarCliente() {
 		Map<String, Integer> mapCliente = new HashMap<>();
 		mapCliente.put("id", 1);
@@ -92,6 +93,7 @@ public class ClienteDaoImplTest {
 		
 	}
 	
+	@Ignore
 	public void pruebaActualizaCliente() {
 		Cliente cliente = new Cliente();
 		System.out.println("Test actualizar registro");
