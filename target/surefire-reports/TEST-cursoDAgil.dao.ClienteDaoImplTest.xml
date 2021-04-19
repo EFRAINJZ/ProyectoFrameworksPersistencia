@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
+
 <testsuite tests="1" failures="0" name="cursoDAgil.dao.ClienteDaoImplTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -65,8 +65,7 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="0.002"/>
-=======
-<testsuite tests="1" failures="0" name="cursoDAgil.dao.ClienteDaoImplTest" time="2.11" errors="0" skipped="0">
+
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_281\bin"/>
@@ -129,5 +128,5 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="2.11"/>
->>>>>>> 50a6cd887ba80d7bbe59761e7e360f4b16075b8a
+
 </testsuite>
