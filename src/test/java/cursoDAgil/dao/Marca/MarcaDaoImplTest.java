@@ -74,7 +74,7 @@ public class MarcaDaoImplTest {
 	      System.out.println("Error: " + e);
 	   }
 	}
-	@Test
+	@Ignore
 	public void pruebaBorrarMarca(){
 		
 		Map<String, Integer> mapMarca=new HashMap<>();
