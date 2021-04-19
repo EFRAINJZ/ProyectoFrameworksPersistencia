@@ -15,15 +15,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cursoDAgil.bd.domain.Direccion;
-
+import cursoDAgil.dao.direccion.DireccionDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext.xml"})
+@ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DireccionDaoImplTest {
 	@Inject
 	DireccionDao direccionDao;
 
-	@Test
+	@Ignore
 	public void consultarDireccionPorId() {
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
@@ -38,7 +38,37 @@ public class DireccionDaoImplTest {
 		}
 	}
 
-	@Test
+	@Ignore
+	public void borrarDireccionPorId() {
+		Direccion direccion = new Direccion();
+		Map<String, Integer> mapDireccion = new HashMap<>();
+		mapDireccion.put("idDireccion", 4);
+		try {
+			direccion = direccionDao.borrarDireccionPorId(mapDireccion);
+			assertNull(direccion);
+			System.out.println("Borrada correctamente");
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+
+	}
+
+	@Ignore
+	public void modificarDireccionPorId() {
+		Direccion direccion = new Direccion();
+		Map<String, Integer> mapDireccion = new HashMap<>();
+		mapDireccion.put("idDireccion", 2);
+		try {
+			direccion = direccionDao.modificarDireccionPorId(mapDireccion);
+			assertEquals(direccion.getCiudad(), "Mexico");
+			System.out.println("Modificada correctamente");
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+
+	}
+
+	@Ignore
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todas las direcciones");

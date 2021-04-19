@@ -50,6 +50,19 @@ public class DireccionDaoImpl implements DireccionDao, Serializable{
 		}
 		return null;
 	}
+	
+	@Override
+	public Direccion borrarDireccionPorId(Map<String, Integer> mapDireccion){
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+
+			return direccionMapper.borrarDireccionPorId(mapDireccion);
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+		return null;
+		
+	}
 
 	@Override
 	public List<Direccion> obtenerDirecciones() {
@@ -62,7 +75,20 @@ public class DireccionDaoImpl implements DireccionDao, Serializable{
 		}
 		return null;
 	}
+	
+	@Override
+	public Direccion modificarDireccionPorId(Map<String, Integer> mapDireccion){
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
 
+			return direccionMapper.modificarDireccionPorId(mapDireccion);
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+		return null;
+		
+		
+	}
+	
 
 }
-

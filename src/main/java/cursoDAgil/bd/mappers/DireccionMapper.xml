@@ -23,4 +23,13 @@
 		parameterType="hashMap">
 		SELECT dir.idDireccion, dir.calle, dir.numero, dir.colonia, dir.ciudad, dir.estado, dir.pais, dir.codigoPostal FROM equipo2.direccion dir WHERE idDireccion = #{idDireccion}
 	</select>
+	<select id="borrarDireccionPorId" resultMap="BaseResultMap"
+		parameterType="hashMap">
+		DELETE FROM direccion WHERE idDireccion = #{idDireccion}
+		</select>
+		
+	<select id="modificarDireccionPorId" resultMap="BaseResultMap"
+		parameterType="hashMap">
+		UPDATE direccion SET ciudad='Guadalajara' WHERE idDireccion=#{idDireccion}
+		</select>
 </mapper>
