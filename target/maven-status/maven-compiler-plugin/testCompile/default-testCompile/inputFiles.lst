@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/test/java/cursoDAgil/dao/DireccionDaoImplTest.java
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/test/java/cursoDAgil/dao/ClienteDaoImplTest.java
+=======
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\test\java\cursoDAgil\dao\ClienteDaoImplTest.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\test\java\cursoDAgil\dao\direccion\DireccionDaoImplTest.java
+>>>>>>> 50a6cd887ba80d7bbe59761e7e360f4b16075b8a

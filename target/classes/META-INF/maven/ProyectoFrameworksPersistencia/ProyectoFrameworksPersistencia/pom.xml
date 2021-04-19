@@ -1,28 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>cursoDAgil</groupId>
-    <artifactId>ProyectoFrameworksCentral</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>ProyectoFrameworksPersistencia</groupId>
-  <artifactId>ProyectoFrameworksPersistencia</artifactId>
-<url>http://maven.apache.org</url>
-<properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	
-</properties>
-<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>cursoDAgil</groupId>
+		<artifactId>ProyectoFrameworksCentral</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>ProyectoFrameworksPersistencia</groupId>
+	<artifactId>ProyectoFrameworksPersistencia</artifactId>
 
-		<!-- Integracion Spring con MyBatis -->
-
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
 		<dependency>  
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-			<!-- Pruebas unitarias con Spring -->
-		
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -35,22 +31,19 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- Persistencia -->
 
 		<dependency> 
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.2.8</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.33</version>
 			<scope>runtime</scope>
 		</dependency>
-		
-		<!-- JSF -->
 
 		<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -69,7 +62,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- JSF-330 to inject -->
 		
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -83,8 +75,6 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- Para pruebas unitarias -->
 
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -98,6 +88,6 @@
 			<version>1.2.2</version>
 		</dependency>
 
+	</dependencies>
 
-</dependencies>
 </project>

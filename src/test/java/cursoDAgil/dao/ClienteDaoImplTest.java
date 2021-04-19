@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import javax.inject.Inject;
 
 import org.junit.Test;
@@ -24,6 +25,7 @@ public class ClienteDaoImplTest {
 	ClienteDao clienteDao;
 	
 	@Test
+
 	
 	public void pruebaConsultarTodo(){
 		int reg;
@@ -33,13 +35,13 @@ public class ClienteDaoImplTest {
 			reg = lista.size();
 			assertEquals(lista.size(),reg);
 			System.out.println("\nRegistros en la tabla: " + reg);
-			
+
 		} catch (Exception ex) {
 			// TODO: handle exception
 			System.out.println("error: "+ex);
 		}
 	}
-	
+
 	
 	public void pruebaAgregarUnCliente() {
 		Cliente cliente = new Cliente();
@@ -107,3 +109,6 @@ public class ClienteDaoImplTest {
 	}
 
 }
+
+
+

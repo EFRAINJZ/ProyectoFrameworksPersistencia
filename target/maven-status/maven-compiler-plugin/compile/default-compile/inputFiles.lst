@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDao.java
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDaoImpl.java
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDaoImpl.java
@@ -6,3 +7,13 @@
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/DireccionMapper.java
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Direccion.java
 /Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDao.java
+=======
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Direccion.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Cliente.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\ClienteMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\cliente\ClienteDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\DireccionMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\direccion\DireccionDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\cliente\ClienteDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\direccion\DireccionDao.java
+>>>>>>> 50a6cd887ba80d7bbe59761e7e360f4b16075b8a

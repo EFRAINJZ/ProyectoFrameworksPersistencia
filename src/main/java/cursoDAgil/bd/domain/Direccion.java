@@ -1,5 +1,4 @@
 
-  
 package cursoDAgil.bd.domain;
 
 public class Direccion {

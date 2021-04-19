@@ -1,4 +1,7 @@
-  package cursoDAgil.bd.domain;
+
+package cursoDAgil.bd.domain;
+
+
 
 public class Cliente {
     /**
@@ -215,4 +218,8 @@ public class Cliente {
     public void setIddireccion(Integer iddireccion) {
         this.idDireccion = iddireccion;
     }
+
 }
+
+
+

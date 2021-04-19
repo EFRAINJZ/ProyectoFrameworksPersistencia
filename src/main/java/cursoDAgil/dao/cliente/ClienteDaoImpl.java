@@ -2,7 +2,9 @@ package cursoDAgil.dao.cliente;
 
 import java.io.Serializable;
 import java.util.List;
+
 import java.util.Map;
+
 
 import javax.inject.Named;
 
@@ -15,6 +17,7 @@ import cursoDAgil.bd.mappers.ClienteMapper;
 
 @Named
 public class ClienteDaoImpl implements ClienteDao, Serializable {
+
 	/**
 	 * 
 	 */
@@ -45,6 +48,7 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 		}
 		return null;
 	}
+
 	
 	
 	public Integer agregarCliente(Cliente cliente) {
@@ -95,5 +99,5 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 
 		return null;	
 	}
-	
+
 }
