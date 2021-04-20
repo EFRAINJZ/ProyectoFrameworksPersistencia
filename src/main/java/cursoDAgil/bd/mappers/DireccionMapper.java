@@ -10,5 +10,5 @@ public interface DireccionMapper {
 	Integer nuevaDireccionCliente(Direccion direccion);
 	Direccion obtenerDireccionPorId(Map<String, Integer>mapDireccion);
 	Direccion borrarDireccionPorId(Map<String, Integer> mapDireccion);
-	Direccion modificarDireccionPorId(Map<String, Integer>mapDireccion);
+	Integer modificarDireccionPorId(Direccion direccion);
 }

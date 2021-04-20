@@ -32,7 +32,7 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebActualizarMarca(){
 		Marca marca=new Marca();
 		System.out.println("Test actualizar registro");
@@ -44,7 +44,7 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test consultar todas las marcas");
