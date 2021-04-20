@@ -32,7 +32,7 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebActualizarMarca(){
 		Marca marca=new Marca();
 		System.out.println("Test actualizar registro");

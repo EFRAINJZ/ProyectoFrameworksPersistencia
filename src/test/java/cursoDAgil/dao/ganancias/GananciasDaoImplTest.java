@@ -23,7 +23,7 @@ public class GananciasDaoImplTest {
 	@Inject
 	GananciasDao gananciasDao;
 
-	@Test
+	@Ignore
 	public void obtenerGananciasPorFecha() {
 		Ganancias ganancias = new Ganancias();
 		Map<String, String> mapGanancias = new HashMap<>();
@@ -38,7 +38,7 @@ public class GananciasDaoImplTest {
 		}
 	}
 
-	@Ignore
+	@Test
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todas las ganancias");

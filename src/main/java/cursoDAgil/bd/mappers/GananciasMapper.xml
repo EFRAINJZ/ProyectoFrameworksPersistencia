@@ -25,7 +25,7 @@
 		SELECT
 		gan.idGanancia,
 		gan.ventaId,
-		gan.totalGanancia,
+		gan.totalGanacia,
 		gan.fecha
 		FROM
 		equipo2.ganancias gan
