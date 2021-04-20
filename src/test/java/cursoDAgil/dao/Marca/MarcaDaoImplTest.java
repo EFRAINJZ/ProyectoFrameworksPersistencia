@@ -44,7 +44,7 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test consultar todas las marcas");
