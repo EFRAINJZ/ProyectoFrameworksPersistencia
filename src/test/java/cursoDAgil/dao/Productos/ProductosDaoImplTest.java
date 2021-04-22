@@ -24,7 +24,7 @@ public class ProductosDaoImplTest {
 	@Inject
 	ProductosDao productosDao;
 	
-	@Test
+	@Ignore
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todos los productos");
@@ -54,12 +54,12 @@ public class ProductosDaoImplTest {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void consultarProductosPorId(){
 		Productos productos = new Productos();
 		System.out.println("Test Buscar Producto por Id");
 		Map<String, Integer> mapDireccion = new HashMap<>();
-		mapDireccion.put("idProducto",1);
+		mapDireccion.put("idProducto",3);
 		try{
 			productos = productosDao.obtenerProductosPorId(mapDireccion);
 			assertNotNull(productos);
