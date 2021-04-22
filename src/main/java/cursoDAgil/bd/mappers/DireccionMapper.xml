@@ -30,6 +30,6 @@
 		
 	<select id="modificarDireccionPorId" resultMap="BaseResultMap"
 		parameterType="hashMap">
-		UPDATE direccion SET ciudad='Guadalajara' WHERE idDireccion=#{idDireccion}
+		UPDATE direccion SET ciudad=#{ciudad} WHERE idDireccion=#{idDireccion}
 		</select>
 </mapper>

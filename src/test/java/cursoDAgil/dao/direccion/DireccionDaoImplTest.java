@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+
 import cursoDAgil.bd.domain.Direccion;
 import cursoDAgil.dao.direccion.DireccionDao;
 
@@ -22,6 +23,22 @@ import cursoDAgil.dao.direccion.DireccionDao;
 public class DireccionDaoImplTest {
 	@Inject
 	DireccionDao direccionDao;
+	
+	@Test
+	public void obtenerDirecciones(){
+		int reg;
+		System.out.println("Test para consultar las direcciones");
+		try {
+			List<Direccion> lista= direccionDao.obtenerDirecciones();
+			reg = lista.size();
+			assertEquals(lista.size(),reg);
+			System.out.println("\nRegistros en la tabla: " + reg);
+
+		} catch (Exception ex) {
+			// TODO: handle exception
+			System.out.println("error: "+ex);
+		}
+	}
 
 	@Ignore
 	public void consultarDireccionPorId() {
@@ -56,11 +73,11 @@ public class DireccionDaoImplTest {
 	@Ignore
 	public void modificarDireccionPorId() {
 		Direccion direccion = new Direccion();
-		Map<String, Integer> mapDireccion = new HashMap<>();
-		mapDireccion.put("idDireccion", 2);
 		try {
-			direccion = direccionDao.modificarDireccionPorId(mapDireccion);
-			assertEquals(direccion.getCiudad(), "Mexico");
+			direccion.setIdDireccion(2);
+			direccion.setCiudad("Cruz Azul");
+			direccionDao.modificarDireccionPorId(direccion);
+			assertEquals(direccion.getCiudad(), "Cruz Azul");
 			System.out.println("Modificada correctamente");
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
