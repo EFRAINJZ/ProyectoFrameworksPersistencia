@@ -21,6 +21,28 @@ public class DetallesVentaDaoImpl implements DetallesVentaDao,Serializable {
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
+	
+	
+	@Override
+	public List<DetallesVenta> ListarTodosLosDetalles(){
+		List<DetallesVenta> list = null;
+		try{
+			DetallesVentaMapper detallesVentaMapper=sqlSession.getMapper(DetallesVentaMapper.class);
+			list = detallesVentaMapper.innerVentas();
+			for(DetallesVenta dv:list){
+				System.out.println("Id Producto: "+dv.getProductoId());
+				System.out.println("Id venta: "+dv.getVentaId());
+				System.out.println("Cantidad: "+dv.getCantidad());
+				System.out.println("Nombre del producto: "+dv.getProducto().getNombre());
+				System.out.println("Precio de venta: "+dv.getProducto().getPrecioVta());
+				System.out.println("Nombre de la marca: "+dv.getProducto().getMarcas().getNombreMarca());
+			}
+			return list;
+		} catch(Exception e){
+			System.out.println("Error: "+e);
+		}
+		return null;
+	}
 	@Override
 	public Integer nuevoDetallesVenta(DetallesVenta detallesVenta) {
 		try{

@@ -8,4 +8,5 @@ import cursoDAgil.bd.domain.DetallesVenta;
 public interface DetallesVentaDao {
 	Integer nuevoDetallesVenta(DetallesVenta detallesVenta);
 	List<DetallesVenta> obtenerDetallesVenta(Map<String, Integer> mapDetallesVenta);
+	List<DetallesVenta> ListarTodosLosDetalles();
 }

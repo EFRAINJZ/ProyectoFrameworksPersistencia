@@ -6,15 +6,49 @@
 		<id column="productoId" property="productoId" jdbcType="INTEGER" />
 		<id column="cantidad" property="cantidad" jdbcType="INTEGER" />
 	</resultMap>
-	<insert id="nuevoDetallesVenta" parameterType="cursoDAgil.bd.domain.DetallesVenta"
-		>
-		INSERT INTO detalleventas(ventaId,productoId,cantidad) VALUES (#{ventaId},#{productoId},#{cantidad})
-	</insert >
-	
+
+	<resultMap id="ResultProductosMarcas" type="cursoDAgil.bd.domain.DetallesVenta">
+		<id column="ventaId" property="ventaId" jdbcType="INTEGER" />
+		<id column="productoId" property="productoId" jdbcType="INTEGER" />
+		<id column="cantidad" property="cantidad" jdbcType="INTEGER" />
+		<association property="productos" column="productoId"
+			resultMap="ProductosResultMap" />
+	</resultMap>
+
+	<resultMap id="ProductosResultMap" type="cursoDAgil.bd.domain.Productos">
+		<id column="idProducto" property="idProducto" jdbcType="INTEGER" />
+		<result column="nombre" property="nombre" jdbcType="VARCHAR" />
+		<result column="precio" property="precio" jdbcType="INTEGER" />
+		<result column="preciaVta" property="precioVta" jdbcType="INTEGER" />
+		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
+		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
+		<association property="marcas" column="marcaId"
+			resultMap="MarcasResultMap" />
+	</resultMap>
+
+	<resultMap id="MarcasResultMap" type="cursoDAgil.bd.domain.Marca">
+		<id column="idMarca" property="idMarca" jdbcType="INTEGER" />
+		<result column="nombreMarca" property="nombreMarca" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<insert id="nuevoDetallesVenta" parameterType="cursoDAgil.bd.domain.DetallesVenta">
+		INSERT INTO detalleventas(ventaId,productoId,cantidad) VALUES
+		(#{ventaId},#{productoId},#{cantidad})
+	</insert>
+
 	<select id="obtenerDetallesVenta" resultMap="BaseResultMap"
-	parameterType="hashMap">
-		SELECT * FROM detalleventas where ventaId=#{ventaId} 
+		parameterType="hashMap">
+		SELECT * FROM detalleventas where ventaId=#{ventaId}
 	</select>
-	
-	
+
+	<select id="innerVentas" resultMap="ResultProductosMarcas">
+		SELECT detalleventas.ventaId, detalleventas.productoId,
+		productos.idProducto, productos.nombre, productos.precio,
+		productos.preciaVta, productos.cantidad, marcas.idMarca,
+		marcas.nombreMarca FROM productos INNER JOIN detalleventas ON
+		productos.idProducto = detalleventas.productoId INNER JOIN marcas ON
+		productos.marcaId=marcas.idMarca
+	</select>
+
+
 </mapper>

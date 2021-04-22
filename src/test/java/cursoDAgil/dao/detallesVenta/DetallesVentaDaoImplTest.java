@@ -22,7 +22,22 @@ import cursoDAgil.bd.domain.DetallesVenta;
 public class DetallesVentaDaoImplTest {
 	@Inject
 	DetallesVentaDao detallesVentaDao;
+	
 	@Test
+	public void pruebaConsultarTodo(){
+		int reg;
+		System.out.println("Test para consultar los detalles ventas");
+		try {
+			List<DetallesVenta> lista= detallesVentaDao.ListarTodosLosDetalles();
+			reg = lista.size();
+			assertEquals(lista.size(),reg);
+			System.out.println("\nRegistros en la tabla: " + reg);
+		} catch (Exception ex) {
+			// TODO: handle exception
+			System.out.println("error: "+ex);
+		}
+	}
+	@Ignore
 	public void pruebaNuevoDetallesVenta(){
 		DetallesVenta detallesVenta=new DetallesVenta();
 		System.out.println("Test nuevo detalles venta");
