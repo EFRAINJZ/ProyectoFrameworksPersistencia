@@ -25,14 +25,14 @@ public class GananciasDaoImplTest {
 
 	@Test
 	public void obtenerGananciasPorFecha() {
-		Ganancias ganancias = new Ganancias();
+		//Ganancias ganancias = new Ganancias();
 		Map<String, String> mapGanancias = new HashMap<>();
 		mapGanancias.put("fecha", "2021-04-01");
 		try {
-			ganancias = gananciasDao.obtenerGananciasPorFecha(mapGanancias);
+			List<Ganancias> ganancias = gananciasDao.obtenerGananciasPorFecha(mapGanancias);
 			assertNotNull(ganancias);
-			System.out.println("fecha:" + ganancias.getFecha());
-			System.out.println("ganacia:" + ganancias.getTotalGanancia());
+			//System.out.println("fecha:" + ganancias.getFecha());
+			//System.out.println("ganacia:" + ganancias.getTotalGanancia());
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}

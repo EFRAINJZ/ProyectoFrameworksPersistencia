@@ -34,12 +34,18 @@ public class GananciasDaoImpl implements GananciasDao {
 	}
 
 	@Override
-	public Ganancias obtenerGananciasPorFecha(Map<String, String> mapGanancias) {
-
+	public List<Ganancias> obtenerGananciasPorFecha(Map<String, String> mapGanancias) {
+		List<Ganancias> list_gan = null;
 		try {
 			GananciasMapper gananciasMapper = sqlSession.getMapper(GananciasMapper.class);
-
-			return gananciasMapper.obtenerGananciasPorFecha(mapGanancias);
+			list_gan = gananciasMapper.obtenerGananciasPorFecha(mapGanancias);
+			for (Ganancias g : list_gan){
+				System.out.println("Fecha" + g.getFecha());
+				System.out.println("Id:" + g.getIdGanancia());
+				System.out.println("Id de la venta:" + g.getVentaId());
+				System.out.println("Ganancia:" + g.getTotalGanancia());
+			}
+			return list_gan;
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
