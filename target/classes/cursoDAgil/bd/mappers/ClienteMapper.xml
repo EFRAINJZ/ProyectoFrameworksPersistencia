@@ -36,7 +36,10 @@
 	</resultMap>
 
 	<select id="listarTodosClientes" resultMap="ResultClienteDireccion">
-		SELECT cli.id, cli.nombre, cli.apellido, cli.email, cli.sexo, cli.idDireccion, d.idDireccion, d.calle, d.numero, d.colonia, d.ciudad, d.estado, d.pais, d.codigoPostal FROM cliente cli INNER JOIN direccion AS d ON cli.idDireccion = d.idDireccion
+		SELECT cli.id, cli.nombre, cli.apellido, cli.email, cli.sexo, cli.idDireccion, 
+		d.idDireccion, d.calle, d.numero, d.colonia, d.ciudad, d.estado, 
+		d.pais, d.codigoPostal 
+		FROM cliente cli INNER JOIN direccion AS d ON cli.idDireccion = d.idDireccion
 	</select>
 	<insert id="agregarCliente" parameterType="cursoDAgil.bd.domain.Cliente"
 			useGeneratedKeys="true" keyProperty="idCliente">
@@ -51,7 +54,10 @@
 		UPDATE cliente SET nombre=#{nombre}, apellido=#{apellido},email=#{email}, sexo=#{sexo},idDireccion=#{idDireccion} WHERE id=#{id}
 	</update>
 	<select id="obtenerClientePorId" resultMap="ResultClienteDireccion">
-		SELECT cli.id, cli.nombre, cli.apellido, cli.email, cli.sexo, cli.idDireccion, d.idDireccion, d.calle, d.numero, d.colonia, d.ciudad, d.estado, d.pais, d.codigoPostal FROM cliente cli INNER JOIN direccion AS d ON cli.idDireccion = d.idDireccion WHERE cli.id=#{id}	
+		SELECT cli.id, cli.nombre, cli.apellido, cli.email, cli.sexo, cli.idDireccion, 
+		d.idDireccion, d.calle, d.numero, d.colonia, d.ciudad, d.estado, 
+		d.pais, d.codigoPostal 
+		FROM cliente cli INNER JOIN direccion AS d ON cli.idDireccion = d.idDireccion WHERE cli.id=#{id}	
 	</select>
 
 </mapper>

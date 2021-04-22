@@ -131,5 +131,5 @@
   </properties>
   <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="2.11"/>
 
->>>>>>> main
+
 </testsuite>

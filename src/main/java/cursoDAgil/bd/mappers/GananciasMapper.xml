@@ -6,7 +6,7 @@
 		<id column="idGanancia" property="idGanancia" jdbcType="INTEGER" />
 		<result column="ventaId" property="ventaId" jdbcType="INTEGER" />
 		<result column="numero" property="numero" jdbcType="INTEGER" />
-		<result column="totalGanancia" property="totalGanancia"
+		<result column="totalGanacia" property="totalGanancia"
 			jdbcType="DOUBLE" />
 		<result column="fecha" property="fecha" jdbcType="DATE" />
 	</resultMap>
