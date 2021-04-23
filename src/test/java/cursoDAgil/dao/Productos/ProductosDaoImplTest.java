@@ -24,7 +24,7 @@ public class ProductosDaoImplTest {
 	@Inject
 	ProductosDao productosDao;
 	
-	@Ignore
+	@Test
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todos los productos");
@@ -37,7 +37,7 @@ public class ProductosDaoImplTest {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void nuevoRegistro() {
 		Productos productos = new Productos();
 		System.out.println("Test nuevo registro");
@@ -59,7 +59,7 @@ public class ProductosDaoImplTest {
 		Productos productos = new Productos();
 		System.out.println("Test Buscar Producto por Id");
 		Map<String, Integer> mapDireccion = new HashMap<>();
-		mapDireccion.put("idProducto",3);
+		mapDireccion.put("idProducto",2);
 		try{
 			productos = productosDao.obtenerProductosPorId(mapDireccion);
 			assertNotNull(productos);
@@ -71,12 +71,12 @@ public class ProductosDaoImplTest {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void eliminarProducto() {
 		Productos productos = new Productos();
 		System.out.println("Test eliminar un producto por id");
 		Map<String, Integer> mapDireccion = new HashMap<>();
-		mapDireccion.put("idProducto",12);
+		mapDireccion.put("idProducto",6);
 		
 		try{
 			productosDao.eliminarProductoPorId(mapDireccion);
@@ -87,12 +87,12 @@ public class ProductosDaoImplTest {
 		
 	}
 	
-	@Ignore
+	@Test
 	public void modificarProducto() {
 		Productos productos = new Productos();
 		System.out.println("Test modificar productos");
 		try {
-			productos.setIdProducto(1);
+			productos.setIdProducto(2);
 			productos.setNombre("Procesador");
 			productos.setPrecio(4000);
 			productos.setPrecioVta(5678);

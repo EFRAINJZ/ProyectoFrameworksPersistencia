@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="cursoDAgil.dao.direccion.DireccionDaoImplTest" time="0.023" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="cursoDAgil.dao.Productos.ProductosDaoImplTest" time="0.035" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -63,5 +63,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="cursoDAgil.dao.direccion.DireccionDaoImplTest" name="obtenerDirecciones" time="0.023"/>
+  <testcase classname="cursoDAgil.dao.Productos.ProductosDaoImplTest" name="consultarProductosPorId" time="0.014"/>
+  <testcase classname="cursoDAgil.dao.Productos.ProductosDaoImplTest" name="eliminarProducto" time="0.002"/>
+  <testcase classname="cursoDAgil.dao.Productos.ProductosDaoImplTest" name="modificarProducto" time="0.002"/>
+  <testcase classname="cursoDAgil.dao.Productos.ProductosDaoImplTest" name="pruebaConsultarTodo" time="0.008"/>
+  <testcase classname="cursoDAgil.dao.Productos.ProductosDaoImplTest" name="nuevoRegistro" time="0.009"/>
 </testsuite>
