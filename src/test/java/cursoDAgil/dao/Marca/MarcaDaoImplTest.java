@@ -21,7 +21,7 @@ import cursoDAgil.bd.domain.Marca;
 public class MarcaDaoImplTest {
 	@Inject
 	MarcaDao marcaDao;
-	@Test
+	@Ignore
 	public void pruebaNuevoRegistro() {
 		Marca marca=new Marca();
 		System.out.println("Test nuevo registro");

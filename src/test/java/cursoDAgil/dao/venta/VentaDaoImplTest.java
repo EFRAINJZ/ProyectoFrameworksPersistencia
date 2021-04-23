@@ -1,15 +1,16 @@
 package cursoDAgil.dao.venta;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 import javax.inject.Inject;
 
 import org.junit.Ignore;
-import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -48,19 +49,33 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
-	public void pruebaObtenerVentasPorCliente(){
-		int reg;
-		int idCliente=4;
-		Map<String, Integer> mapVentas = new HashMap<>();
-		mapVentas.put("idCliente",idCliente);
-		System.out.println("Test obtener ventas por cliente");
+	@Ignore
+	public void pruebaObtenerVentaPorId(){
+	
+		Venta venta=new Venta();
+		int idVenta=4;
+		System.out.println("Test obtener ventaa por id");
 		try{
-			List<Venta> lista=ventasDao.obtenerVentasPorCliente(mapVentas);
-			reg = lista.size();
-			assertEquals(lista.size(), reg);
-			System.out.println("Ventas del cliente con id: "+idCliente);
-			System.out.println("\nRegistros en la tabla ventas: " + reg);
+			 venta=ventasDao.obtenerVentasPorId(idVenta);
+			assertNotNull(venta);
+			System.out.println("Id Venta:"+venta.getIdVenta());
+		}catch(Exception e){
+			System.out.println("Error "+e);
+		}
+	}
+	@Ignore
+	public void pruebaObtenerVentaConProductosPorId(){
+		
+		Venta venta=new Venta();
+		int idVenta=4;
+		
+		System.out.println("Test obtener ventaa por id");
+		try{
+			 venta=ventasDao.obtenerVentasConProductosPorId(idVenta);
+			assertNotNull(venta);
+			
+			System.out.println("Id Venta:"+venta.getIdVenta());
+			
 			
 		}catch(Exception e){
 			System.out.println("Error "+e);

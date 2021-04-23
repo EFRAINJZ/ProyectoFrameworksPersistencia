@@ -47,7 +47,7 @@
 		<result column="fecha" property="fecha" jdbcType="DATE" />
 		
 		<result column="id" jdbcType="INTEGER" property="cliente.id" />
-		<result column="nombre" jdbcType="VARCHAR" property="cliente.nombre" />
+		<result column="nombreCliente" jdbcType="VARCHAR" property="cliente.nombre" />
 		<result column="apellido" jdbcType="VARCHAR" property="cliente.apellido" />
 		<result column="email" jdbcType="VARCHAR" property="cliente.email" />
 		<result column="sexo" jdbcType="VARCHAR" property="cliente.sexo" />
@@ -75,7 +75,7 @@
 		vtas.totalVenta,
 		vtas.fecha,
 		cli.id,
-		cli.nombre,
+		cli.nombre as nombreCliente,
 		cli.apellido,
 		cli.email,
 		cli.sexo,
