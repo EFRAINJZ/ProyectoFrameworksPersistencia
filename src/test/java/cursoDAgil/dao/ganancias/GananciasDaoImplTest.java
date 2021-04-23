@@ -23,11 +23,13 @@ public class GananciasDaoImplTest {
 	@Inject
 	GananciasDao gananciasDao;
 
-	@Ignore
+	@Test
 	public void obtenerGananciasPorFecha() {
 		//Ganancias ganancias = new Ganancias();
+		System.out.println("Test consultar todas las ganancias por fecha");
+
 		Map<String, String> mapGanancias = new HashMap<>();
-		mapGanancias.put("fecha", "2021-04-01");
+		mapGanancias.put("fecha", "2021-04-14");
 		try {
 			List<Ganancias> ganancias = gananciasDao.obtenerGananciasPorFecha(mapGanancias);
 			assertNotNull(ganancias);
@@ -46,18 +48,18 @@ public class GananciasDaoImplTest {
 			List<Ganancias> lista = gananciasDao.obtenerGanancias();
 			reg = lista.size();
 			assertEquals(lista.size(), reg);
-			// System.out.println("\nRegistros en la tabla: " + reg);
+			System.out.println("\nRegistros en la tabla: " + reg);
 		} catch (Exception ex) {
 			System.out.println("error" + ex);
 		}
 	}
 
-	@Ignore
+	@Test
 	public void nuevoRegistro() {
 		Ganancias ganancia = new Ganancias();
 		System.out.println("Test nuevo registro");
 		try {
-			ganancia.setVentaId(3);
+			ganancia.setVentaId(1);
 			ganancia.setTotalGanancia(2123.90);
 			ganancia.setFecha("2021-04-14");
 			gananciasDao.nuevaGanancia(ganancia);

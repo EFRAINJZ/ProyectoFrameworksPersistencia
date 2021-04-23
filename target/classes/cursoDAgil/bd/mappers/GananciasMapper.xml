@@ -6,7 +6,7 @@
 		<id column="idGanancia" property="idGanancia" jdbcType="INTEGER" />
 		<result column="ventaId" property="ventaId" jdbcType="INTEGER" />
 		<result column="numero" property="numero" jdbcType="INTEGER" />
-		<result column="totalGanacia" property="totalGanancia"
+		<result column="totalGanancia" property="totalGanancia"
 			jdbcType="DOUBLE" />
 		<result column="fecha" property="fecha" jdbcType="DATE" />
 	</resultMap>
@@ -25,7 +25,7 @@
 		SELECT
 		gan.idGanancia,
 		gan.ventaId,
-		gan.totalGanacia,
+		gan.totalGanancia,
 		gan.fecha
 		FROM
 		equipo2.ganancias gan

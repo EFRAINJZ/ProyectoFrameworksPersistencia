@@ -1,12 +1,28 @@
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDao.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDaoImpl.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/Marca/MarcaDaoImpl.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/Marca/MarcaDao.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/MarcaMapper.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/cliente/ClienteDaoImpl.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/ClienteMapper.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Cliente.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Marca.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/mappers/DireccionMapper.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/bd/domain/Direccion.java
-/Users/elsy/eclipse-workspace/ProyectoFrameworksPersistencia/src/main/java/cursoDAgil/dao/direccion/DireccionDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Ganancias.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\Marca\MarcaDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\DetallesVenta.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\DetallesVentaMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\MarcaMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\detallesVenta\DetallesVentaDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\ganancias\GananciasDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Direccion.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Cliente.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Venta.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\cliente\ClienteDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\Marca\MarcaDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\cliente\ClienteDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\direccion\DireccionDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\ClienteMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\VentaMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\detallesVenta\DetallesVentaDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\Productos\ProductosDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\venta\VentaDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Productos.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\Productos\ProductosDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\DireccionMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\domain\Marca.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\ganancias\GananciasDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\ProductosMapper.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\venta\VentaDao.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\dao\direccion\DireccionDaoImpl.java
+C:\Users\Juan Ramírez\workspace\ProyectoFrameworksPersistencia\src\main\java\cursoDAgil\bd\mappers\GananciasMapper.java
