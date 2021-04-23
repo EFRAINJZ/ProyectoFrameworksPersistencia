@@ -19,7 +19,7 @@
 		<id column="idProducto" property="idProducto" jdbcType="INTEGER" />
 		<result column="nombre" property="nombre" jdbcType="VARCHAR" />
 		<result column="precio" property="precio" jdbcType="INTEGER" />
-		<result column="preciaVta" property="precioVta" jdbcType="INTEGER" />
+		<result column="precioVta" property="precioVta" jdbcType="INTEGER" />
 		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
 		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
 		<association property="marcas" column="marcaId"
@@ -44,7 +44,7 @@
 	<select id="innerVentas" resultMap="ResultProductosMarcas">
 		SELECT detalleventas.ventaId, detalleventas.productoId,
 		productos.idProducto, productos.nombre, productos.precio,
-		productos.preciaVta, productos.cantidad, marcas.idMarca,
+		productos.precioVta, productos.cantidad, marcas.idMarca,
 		marcas.nombreMarca FROM productos INNER JOIN detalleventas ON
 		productos.idProducto = detalleventas.productoId INNER JOIN marcas ON
 		productos.marcaId=marcas.idMarca

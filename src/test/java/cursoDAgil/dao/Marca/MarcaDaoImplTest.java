@@ -32,19 +32,19 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebActualizarMarca(){
 		Marca marca=new Marca();
 		System.out.println("Test actualizar registro");
 		try{
-			marca.setIdMarca(1);
+			marca.setIdMarca(2);
 			marca.setNombreMarca("Adidas");
 			marcaDao.actualizarMarca(marca);
 		}catch(Exception e){
 			System.out.println("Error: " + e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test consultar todas las marcas");
@@ -59,7 +59,7 @@ public class MarcaDaoImplTest {
 		}
 	}
 
-	@Ignore
+	@Test
 	public void pruebaObtenerMarcaPorId(){
 		Marca marca=new Marca();
 		Map<String, Integer> mapMarca=new HashMap<>();
@@ -74,7 +74,7 @@ public class MarcaDaoImplTest {
 	      System.out.println("Error: " + e);
 	   }
 	}
-	@Ignore
+	@Test
 	public void pruebaBorrarMarca(){
 		
 		Map<String, Integer> mapMarca=new HashMap<>();
