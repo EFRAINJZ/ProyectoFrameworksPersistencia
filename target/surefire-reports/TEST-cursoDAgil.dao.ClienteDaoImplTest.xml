@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<testsuite tests="1" failures="0" name="cursoDAgil.dao.ClienteDaoImplTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="cursoDAgil.dao.ClienteDaoImplTest" time="0.052" errors="0" skipped="0">
+
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib"/>
@@ -28,7 +29,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/elsy/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf5418410448395784845.tmp"/>
+    <property name="classworlds.conf" value="/Users/elsy/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf11326774745069147662.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/elsy/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -64,7 +65,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="0.002"/>
+
+  <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="0.052"/>
 
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -128,5 +130,6 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="cursoDAgil.dao.ClienteDaoImplTest" name="pruebaConsultarTodo" time="2.11"/>
+
 
 </testsuite>

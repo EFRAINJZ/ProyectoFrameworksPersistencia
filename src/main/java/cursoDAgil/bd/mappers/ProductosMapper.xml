@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cursoDAgil.bd.mappers.ProductosMapper">
+	<resultMap id="BaseResultMap" type="cursoDAgil.bd.domain.Productos">
+		<id column="idProducto" property="idProducto" jdbcType="INTEGER"/>
+		<result column="nombre" property="nombre" jdbcType="VARCHAR" />
+		<result column="precio" property="precio" jdbcType="INTEGER" />
+		<result column="preciaVta" property="precioVta" jdbcType="INTEGER" />
+		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
+		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
+	</resultMap>
+	
+	<resultMap id="ResultProductosMarca" type="cursoDAgil.bd.domain.Productos">
+		<id column="idProducto" property="idProducto" />
+		<result column="nombre" jdbcType="VARCHAR" property="nombre" />
+		<result column="precio" jdbcType="INTEGER" property="precio" />
+		<result column="precioVta" jdbcType="INTEGER" property="precioVta" />
+		<result column="cantidad" jdbcType="INTEGER" property="cantidad" />
+		<result column="marcaId" jdbcType="INTEGER" property="marcaId" />
+		<association property="marcas" column="idMarca"
+			resultMap="MarcaResultMap" />
+	</resultMap>
+	
+	<resultMap id="MarcaResultMap" type="cursoDAgil.bd.domain.Marca">
+		<id column="idMarca" property="idMarca" />
+		<result column="nombreMarca" property="nombreMarca" />
+	</resultMap>
+
+	<select id="obtenerProductos" resultMap="ResultProductosMarca">
+		SELECT 
+		p.idProducto, 
+		p.nombre, 
+		p.precio, 
+		p.precioVta, 
+		p.cantidad, 
+		p.marcaId, 
+		m.idMarca, 
+		m.nombreMarca 
+		FROM productos p INNER JOIN marcas AS m ON p.marcaId = m.idMarca
+	</select>
+	
+	<insert id="agregarProductos" parameterType="cursoDAgil.bd.domain.Productos" 
+	useGeneratedKeys="true" keyProperty="idProducto">
+		INSERT INTO productos(nombre, precio, precioVta, cantidad, marcaId)
+		VALUES (#{nombre}, #{precio}, #{precioVta}, #{cantidad}, #{marcaId})
+	</insert>
+	
+	<select id="obtenerProductosPorId" resultMap="ResultProductosMarca">
+		SELECT 
+		p.idProducto, 
+		p.nombre, 
+		p.precio, 
+		p.precioVta, 
+		p.cantidad, 
+		p.marcaId, 
+		m.idMarca, 
+		m.nombreMarca 
+		FROM productos p INNER JOIN marcas AS m ON p.marcaId = m.idMarca
+		WHERE
+		p.idProducto = #{idProducto}
+	</select>
+	
+	<delete id="eliminarProductoPorId" parameterType="hashMap">
+		DELETE FROM productos WHERE idProducto = #{idProducto}
+	</delete>
+	
+	<update id="modificarProducto" parameterType="cursoDAgil.bd.domain.Productos">
+		UPDATE productos SET nombre = #{nombre}, precio = #{precio}, precioVta = #{precioVta}, cantidad = #{cantidad} WHERE idProducto = #{idProducto}
+	</update>
+
+	
+</mapper>

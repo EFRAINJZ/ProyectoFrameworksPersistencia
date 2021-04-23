@@ -14,16 +14,33 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cursoDAgil.bd.domain.Direccion;
 
+import cursoDAgil.bd.domain.Direccion;
+import cursoDAgil.dao.direccion.DireccionDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/applicationContext.xml"})
+@ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DireccionDaoImplTest {
 	@Inject
 	DireccionDao direccionDao;
-
+	
 	@Test
+	public void obtenerDirecciones(){
+		int reg;
+		System.out.println("Test para consultar las direcciones");
+		try {
+			List<Direccion> lista= direccionDao.obtenerDirecciones();
+			reg = lista.size();
+			assertEquals(lista.size(),reg);
+			System.out.println("\nRegistros en la tabla: " + reg);
+
+		} catch (Exception ex) {
+			// TODO: handle exception
+			System.out.println("error: "+ex);
+		}
+	}
+
+	@Ignore
 	public void consultarDireccionPorId() {
 		Direccion direccion = new Direccion();
 		Map<String, Integer> mapDireccion = new HashMap<>();
@@ -38,7 +55,37 @@ public class DireccionDaoImplTest {
 		}
 	}
 
-	@Test
+	@Ignore
+	public void borrarDireccionPorId() {
+		Direccion direccion = new Direccion();
+		Map<String, Integer> mapDireccion = new HashMap<>();
+		mapDireccion.put("idDireccion", 4);
+		try {
+			direccion = direccionDao.borrarDireccionPorId(mapDireccion);
+			assertNull(direccion);
+			System.out.println("Borrada correctamente");
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+
+	}
+
+	@Ignore
+	public void modificarDireccionPorId() {
+		Direccion direccion = new Direccion();
+		try {
+			direccion.setIdDireccion(2);
+			direccion.setCiudad("Cruz Azul");
+			direccionDao.modificarDireccionPorId(direccion);
+			assertEquals(direccion.getCiudad(), "Cruz Azul");
+			System.out.println("Modificada correctamente");
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+
+	}
+
+	@Ignore
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todas las direcciones");
