@@ -18,7 +18,7 @@
 		<association property="cliente" column="id"
 		resultMap="ResultClienteDireccion"/>
 	</resultMap>
-	<resultMap id="ResultClienteDireccion" type="Cliente">
+	<resultMap id="ResultClienteDireccion" type="cursoDAgil.bd.domain.Cliente">
 
 		<id column="id" property="id"  />
 		<result column="nombre" jdbcType="VARCHAR" property="nombre" />
@@ -40,7 +40,7 @@
 		<result column="pais" property="pais" />
 		<result column="codigoPostal" property="codigoPostal" />
 	</resultMap>
-	<resultMap id="VentasClienteProductosResultMap" type="cursoDAgil.bd.domain.Ventas">
+	<resultMap id="VentasClienteProductosResultMap" type="cursoDAgil.bd.domain.Venta">
 		<id column="idVenta" property="idVenta" jdbcType="INTEGER" />
 		<result column="clienteId" property="clienteId" jdbcType="INTEGER" />
 		<result column="totalVenta" property="totalVenta" jdbcType="DOUBLE" />
@@ -53,7 +53,7 @@
 		<result column="sexo" jdbcType="VARCHAR" property="cliente.sexo" />
 														  
 		<collection property="productos" javaType="Arraylist"
-		column="idProducto" ofType="cursoDAgil.bd.domain.Producto" resultMap="ProductosResultMap"/>
+		column="idProducto" ofType="cursoDAgil.bd.domain.Productos" resultMap="ProductosResultMap"/>
 	</resultMap>
 	<resultMap id="ProductosResultMap" type="cursoDAgil.bd.domain.Productos">
 		<id column="idProducto" property="idProducto" jdbcType="INTEGER"/>
