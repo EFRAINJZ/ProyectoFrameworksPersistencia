@@ -123,7 +123,7 @@
 		vtas.fecha,
 		
 		cli.id,
-		cli.nombre,
+		cli.nombre as nombreCliente,
 		cli.apellido,
 		cli.email,
 		cli.sexo,
