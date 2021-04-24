@@ -51,11 +51,12 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 			list= ventaMapper.obtenerVentas();
 			for(Venta vtas:list){
 				System.out.println("IdVenta: "+vtas.getIdVenta());
-				System.out.println("Cliente: "+vtas.getCliente().getNombre());
-				
+				System.out.println("Cliente: "+vtas.getCliente().getNombre());	
 			}
+			return list;
+			
 		}catch (Exception e) {
-			System.out.println("Error: " + e);
+			System.out.println("Error en ventas: " + e);
 		}
 		return null;
 	}
@@ -68,6 +69,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 			venta= ventaMapper.obtenerVentasPorId(idVenta);
 			System.out.println("IdVenta: "+venta.getIdVenta());
 			System.out.println("Cliente: "+venta.getCliente().getNombre());
+			return venta;
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
@@ -78,14 +80,19 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 		Venta venta=null;
 		try{
 			VentaMapper ventaMapper=sqlSession.getMapper(VentaMapper.class);
-			venta= ventaMapper.obtenerVentasPorId(idVenta);
+			venta= ventaMapper.obtenerVentasConProductosPorId(idVenta);
 			System.out.println("IdVenta: "+venta.getIdVenta());
 			System.out.println("Cliente: "+venta.getCliente().getNombre());
 			List<Productos> productos=venta.getProductos();
+			if(productos==null){
+				System.out.println("No se encontró nada");
+
+			}else
 			for(Productos prod:productos){
 			   System.out.println("Nombre producto: "+prod.getNombre());
 			   System.out.println("Cantidad: "+prod.getCantidad());
 			}
+			return venta;
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
 		}

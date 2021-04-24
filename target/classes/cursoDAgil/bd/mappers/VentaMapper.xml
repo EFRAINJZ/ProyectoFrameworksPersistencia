@@ -21,7 +21,7 @@
 	<resultMap id="ResultClienteDireccion" type="cursoDAgil.bd.domain.Cliente">
 
 		<id column="id" property="id"  />
-		<result column="nombre" jdbcType="VARCHAR" property="nombre" />
+		<result column="nombreCliente" jdbcType="VARCHAR" property="nombre" />
 		<result column="apellido" jdbcType="VARCHAR" property="apellido" />
 		<result column="email" jdbcType="VARCHAR" property="email" />
 		<result column="sexo" jdbcType="VARCHAR" property="sexo" />
@@ -93,7 +93,7 @@
 		vtas.totalVenta,
 		vtas.fecha,
 		cli.id,
-		cli.nombre,
+		cli.nombre as nombreCliente,
 		cli.apellido,
 		cli.email,
 		cli.sexo,
@@ -114,19 +114,22 @@
 		where idVenta=#{idVenta}
 		
 			</select>
-		<select id="obtenerVentasConProductosPorId" resultMap="VentasClienteResultMap"
+		<select id="obtenerVentasConProductosPorId" resultMap="VentasClienteProductosResultMap"
 	parameterType="Integer">
 		SELECT 
 		vtas.idVenta,
 		vtas.clienteId,
 		vtas.totalVenta,
 		vtas.fecha,
+		
 		cli.id,
 		cli.nombre,
 		cli.apellido,
 		cli.email,
 		cli.sexo,
 		cli.idDireccion,
+		
+		prod.nombre,
 		prod.precio,
 		prod.precioVta,
 		prod.cantidad,

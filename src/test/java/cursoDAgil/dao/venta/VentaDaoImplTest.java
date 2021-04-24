@@ -48,24 +48,26 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaObtenerVentas(){
 		int reg;
 		System.out.println("Test obtener todas las ventas");
 		try{
 			List<Venta> lista=ventasDao.obtenerVentas();
+			
 			reg = lista.size();
+			
 			assertEquals(lista.size(), reg);
 			System.out.println("\nRegistros en la tabla ventas: " + reg);
 		}catch(Exception e){
-			System.out.println("Error "+e);
+			System.out.println("Error en test "+e);
 		}
 	}
 	@Ignore
 	public void pruebaObtenerVentaPorId(){
 	
 		Venta venta=new Venta();
-		int idVenta=4;
+		int idVenta=1;
 		System.out.println("Test obtener ventaa por id");
 		try{
 			 venta=ventasDao.obtenerVentasPorId(idVenta);
@@ -75,13 +77,13 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaObtenerVentaConProductosPorId(){
 		
 		Venta venta=new Venta();
-		int idVenta=2;
+		int idVenta=1;
 		
-		System.out.println("Test obtener ventaa por id");
+		System.out.println("Test obtener ventas con productos por id");
 		try{
 			venta=ventasDao.obtenerVentasConProductosPorId(idVenta);
 			assertNotNull(venta);

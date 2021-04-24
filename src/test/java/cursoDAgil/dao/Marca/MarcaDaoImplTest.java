@@ -32,7 +32,7 @@ public class MarcaDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebActualizarMarca(){
 		Marca marca=new Marca();
 		System.out.println("Test actualizar registro");
@@ -59,7 +59,7 @@ public class MarcaDaoImplTest {
 		}
 	}
 
-	@Test
+	@Ignore
 	public void pruebaObtenerMarcaPorId(){
 		Marca marca=new Marca();
 		Map<String, Integer> mapMarca=new HashMap<>();
@@ -74,7 +74,7 @@ public class MarcaDaoImplTest {
 	      System.out.println("Error: " + e);
 	   }
 	}
-	@Test
+	@Ignore
 	public void pruebaBorrarMarca(){
 		
 		Map<String, Integer> mapMarca=new HashMap<>();
