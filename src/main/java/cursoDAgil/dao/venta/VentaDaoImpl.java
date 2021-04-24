@@ -116,26 +116,36 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 			Ganancias nganancia= new Ganancias();
 			nganancia.setVentaId(idVenta);
 			for(Productos prod: productos){
-				System.out.println("No pos si llega");
 				DetallesVenta detalleVenta = new DetallesVenta();
+				
 				detalleVenta.setVentaId(idVenta);
 				detalleVenta.setProductoId(prod.getIdProducto());
-				detalleVenta.setCantidad(prod.getCantidad());
+				//Consulta para obtener los datos del prodcuto en la bd
 				Productos productoExistente = new Productos();
 				Map<String, Integer> mapProducto = new HashMap<>();
 				mapProducto.put("idProducto", prod.getIdProducto());
 				productoExistente=productosDao.obtenerProductosPorId(mapProducto);
-				productoExistente.setCantidad(productoExistente.getCantidad()-prod.getCantidad());
-				ganancia+=prod.getCantidad()*(prod.getPrecioVta()-prod.getPrecio());
-				if (productoExistente.getCantidad()>=0){
+				
+				if (productoExistente!=null && productoExistente.getCantidad()>0){
+					
+					detalleVenta.setCantidad(prod.getCantidad());
+					
+					if(prod.getCantidad()<=productoExistente.getCantidad()){
+						productoExistente.setCantidad(productoExistente.getCantidad()-prod.getCantidad());
+						ganancia+=prod.getCantidad()*(prod.getPrecioVta()-prod.getPrecio());
+					}
+					else{
+						ganancia+=productoExistente.getCantidad()*(prod.getPrecioVta()-prod.getPrecio());
+						productoExistente.setCantidad(0);
+					}
+					  
+					
 					detalleVentaDao.nuevoDetallesVenta(detalleVenta);
 					productosDao.modificarProducto(productoExistente);
-				}else{
-					System.out.println("No pos no hay 	");
 				}
 			}
 			System.out.println("Venta agregada con éxito");
-			return ventaMapper.nuevaVenta(venta);
+			//return ventaMapper.nuevaVenta(venta);
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
