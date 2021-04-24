@@ -62,7 +62,7 @@ public class ClienteDaoImplTest {
 		System.out.println("test consultar cliente por id");
 		Cliente cliente = new Cliente();
 		Map<String, Integer> mapCliente = new HashMap<>();
-		mapCliente.put("id", 2);
+		mapCliente.put("id", 3);
 		try {
 			cliente = clienteDao.obtenerClientePorId(mapCliente);
 			assertNotNull(cliente);

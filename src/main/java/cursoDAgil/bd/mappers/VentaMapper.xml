@@ -15,7 +15,7 @@
 		<result column="clienteId" property="clienteId" jdbcType="INTEGER" />
 		<result column="totalVenta" property="totalVenta" jdbcType="DOUBLE" />
 		<result column="fecha" property="fecha" jdbcType="DATE" />
-		<association property="cliente" column="id"
+	 <association property="cliente" column="id"
 		resultMap="ResultClienteDireccion"/>
 	</resultMap>
 	<resultMap id="ResultClienteDireccion" type="cursoDAgil.bd.domain.Cliente">
@@ -59,7 +59,7 @@
 		<id column="idProducto" property="idProducto" jdbcType="INTEGER"/>
 		<result column="nombre" property="nombre" jdbcType="VARCHAR" />
 		<result column="precio" property="precio" jdbcType="INTEGER" />
-		<result column="preciaVta" property="precioVta" jdbcType="INTEGER" />
+		<result column="precioVta" property="precioVta" jdbcType="INTEGER" />
 		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
 		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
 	</resultMap>
@@ -111,9 +111,9 @@
 		on vtas.clienteId=cli.id
 		INNER JOIN direccion as d
 		on cli.idDireccion=d.idDireccion 
-		where idVenta={#idVenta}
+		where idVenta=#{idVenta}
 		
-	</select>
+			</select>
 		<select id="obtenerVentasConProductosPorId" resultMap="VentasClienteResultMap"
 	parameterType="Integer">
 		SELECT 
@@ -139,7 +139,7 @@
 		INNER JOIN productos AS prod 
 		ON
 		dvtas.productoId=prod.idProducto 
-		where vtas.idVenta={#idVenta}
+		where vtas.idVenta=#{idVenta}
 		
 	</select>
 	
