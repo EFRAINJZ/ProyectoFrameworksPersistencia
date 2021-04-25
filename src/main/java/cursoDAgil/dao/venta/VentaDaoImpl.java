@@ -49,10 +49,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 		try{
 			VentaMapper ventaMapper=sqlSession.getMapper(VentaMapper.class);
 			list= ventaMapper.obtenerVentas();
-			for(Venta vtas:list){
-				System.out.println("IdVenta: "+vtas.getIdVenta());
-				System.out.println("Cliente: "+vtas.getCliente().getNombre());	
-			}
+			
 			return list;
 			
 		}catch (Exception e) {
