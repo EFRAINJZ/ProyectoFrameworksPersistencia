@@ -44,7 +44,7 @@
 	<select id="innerVentas" resultMap="ResultProductosMarcas">
 		SELECT detalleventas.ventaId, detalleventas.productoId,
 		productos.idProducto, productos.nombre, productos.precio,
-		productos.precioVta, productos.cantidad, marcas.idMarca,
+		productos.precioVta, detalleventas.cantidad as cantidad, marcas.idMarca,
 		marcas.nombreMarca FROM productos INNER JOIN detalleventas ON
 		productos.idProducto = detalleventas.productoId INNER JOIN marcas ON
 		productos.marcaId=marcas.idMarca

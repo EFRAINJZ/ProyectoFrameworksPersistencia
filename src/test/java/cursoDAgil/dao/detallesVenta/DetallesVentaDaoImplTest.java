@@ -23,7 +23,7 @@ public class DetallesVentaDaoImplTest {
 	@Inject
 	DetallesVentaDao detallesVentaDao;
 	
-	@Test
+	@Ignore
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test para consultar los detalles ventas");
@@ -37,7 +37,7 @@ public class DetallesVentaDaoImplTest {
 			System.out.println("error: "+ex);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaNuevoDetallesVenta(){
 		DetallesVenta detallesVenta=new DetallesVenta();
 		System.out.println("Test nuevo detalles venta");
@@ -53,7 +53,7 @@ public class DetallesVentaDaoImplTest {
 	@Test
 	public void pruebaObtenerDetallesVenta(){
 		int reg;
-		int idVenta=1;
+		int idVenta=9;
 		Map<String, Integer> mapDetallesVenta = new HashMap<>();
 		mapDetallesVenta.put("ventaId",idVenta);
 		System.out.println("Test obtener detalles venta");
@@ -61,6 +61,7 @@ public class DetallesVentaDaoImplTest {
 		try{
 			List<DetallesVenta> lista=detallesVentaDao.obtenerDetallesVenta(mapDetallesVenta);
 			reg = lista.size();
+			
 			assertEquals(lista.size(), reg);
 			System.out.println("Detalles de la venta con id: "+idVenta);
 			System.out.println("\nRegistros en la tabla detalles ventas: " + reg);
