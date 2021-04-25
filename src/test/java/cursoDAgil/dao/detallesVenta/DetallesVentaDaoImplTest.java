@@ -37,7 +37,7 @@ public class DetallesVentaDaoImplTest {
 			System.out.println("error: "+ex);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaNuevoDetallesVenta(){
 		DetallesVenta detallesVenta=new DetallesVenta();
 		System.out.println("Test nuevo detalles venta");
@@ -50,7 +50,7 @@ public class DetallesVentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaObtenerDetallesVenta(){
 		int reg;
 		int idVenta=1;
