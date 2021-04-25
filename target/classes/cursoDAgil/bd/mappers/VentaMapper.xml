@@ -30,16 +30,7 @@
 			resultMap="DireccionResultMap" />
 		
 	</resultMap>
-	<resultMap id="DireccionResultMap" type="cursoDAgil.bd.domain.Direccion">
-		<id column="idDireccion" property="idDireccion" />
-		<result column="calle" property="calle" />
-		<result column="numero" property="numero" />
-		<result column="colonia" property="colonia" />
-		<result column="ciudad" property="ciudad" />
-		<result column="estado" property="estado" />
-		<result column="pais" property="pais" />
-		<result column="codigoPostal" property="codigoPostal" />
-	</resultMap>
+	
 	<resultMap id="VentasClienteProductosResultMap" type="cursoDAgil.bd.domain.Venta">
 		<id column="idVenta" property="idVenta" jdbcType="INTEGER" />
 		<result column="clienteId" property="clienteId" jdbcType="INTEGER" />
@@ -51,9 +42,20 @@
 		<result column="apellido" jdbcType="VARCHAR" property="cliente.apellido" />
 		<result column="email" jdbcType="VARCHAR" property="cliente.email" />
 		<result column="sexo" jdbcType="VARCHAR" property="cliente.sexo" />
-														  
+		<association property="cliente.direccion" column="idDireccion"
+			resultMap="DireccionResultMap" />										  
 		<collection property="productos" javaType="Arraylist"
 		column="idProducto" ofType="cursoDAgil.bd.domain.Productos" resultMap="ProductosResultMap"/>
+	</resultMap>
+	<resultMap id="DireccionResultMap" type="cursoDAgil.bd.domain.Direccion">
+		<id column="idDireccion" property="idDireccion" />
+		<result column="calle" property="calle" />
+		<result column="numero" property="numero" />
+		<result column="colonia" property="colonia" />
+		<result column="ciudad" property="ciudad" />
+		<result column="estado" property="estado" />
+		<result column="pais" property="pais" />
+		<result column="codigoPostal" property="codigoPostal" />
 	</resultMap>
 	<resultMap id="ProductosResultMap" type="cursoDAgil.bd.domain.Productos">
 		<id column="idProducto" property="idProducto" jdbcType="INTEGER"/>
@@ -115,7 +117,8 @@
 		d.pais,
 		d.codigoPostal
 		
-		FROM equipo2.ventas vtas INNER JOIN cliente AS cli 
+		FROM equipo2.ventas vtas
+		 INNER JOIN cliente AS cli 
 		on vtas.clienteId=cli.id
 		INNER JOIN direccion as d
 		on cli.idDireccion=d.idDireccion 
@@ -130,6 +133,15 @@
 		vtas.totalVenta,
 		vtas.fecha,
 		
+		 d.idDireccion,
+		d.calle,
+		d.numero,
+		d.colonia,
+		d.ciudad,
+		d.estado,
+		d.pais,
+		d.codigoPostal,
+		
 		cli.id,
 		cli.nombre as nombreCliente,
 		cli.apellido,
@@ -140,7 +152,7 @@
 		prod.nombre,
 		prod.precio,
 		prod.precioVta,
-		prod.cantidad,
+		dvtas.cantidad as cantidad,
 		prod.marcaId,
 		
 		mar.idMarca,
@@ -148,6 +160,8 @@
 		
 		FROM equipo2.ventas vtas INNER JOIN cliente AS cli 
 		on vtas.clienteId=cli.id
+		INNER JOIN direccion as d
+		on cli.idDireccion=d.idDireccion 
 		INNER JOIN detalleventas as dvtas
 		on dvtas.ventaId=vtas.idVenta
 		INNER JOIN productos AS prod 

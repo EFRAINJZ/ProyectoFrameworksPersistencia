@@ -67,8 +67,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 		try{
 			VentaMapper ventaMapper=sqlSession.getMapper(VentaMapper.class);
 			venta= ventaMapper.obtenerVentasPorId(idVenta);
-			System.out.println("IdVenta: "+venta.getIdVenta());
-			System.out.println("Cliente: "+venta.getCliente().getNombre());
+			
 			return venta;
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
@@ -81,18 +80,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 		try{
 			VentaMapper ventaMapper=sqlSession.getMapper(VentaMapper.class);
 			venta= ventaMapper.obtenerVentasConProductosPorId(idVenta);
-			System.out.println("IdVenta: "+venta.getIdVenta());
-			System.out.println("Cliente: "+venta.getCliente().getNombre());
-			List<Productos> productos=venta.getProductos();
-			if(productos==null){
-				System.out.println("No se encontró nada");
-
-			}else
-			for(Productos prod:productos){
-			   System.out.println("Nombre producto: "+prod.getNombre());
-			   System.out.println("Marca del producto: "+prod.getMarcas().getNombreMarca());
-			   System.out.println("Cantidad: "+prod.getCantidad());
-			}
+			
 			return venta;
 		}catch (Exception e) {
 			System.out.println("Error: " + e);
