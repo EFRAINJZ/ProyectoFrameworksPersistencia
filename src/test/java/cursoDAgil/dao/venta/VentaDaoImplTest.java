@@ -65,7 +65,7 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaObtenerVentaConProductosPorId(){
 		
 		Venta venta=new Venta();
@@ -86,7 +86,7 @@ public class VentaDaoImplTest {
 	
 	
 	
-	@Test
+	@Ignore
 	public void pruebaNuevaVenta(){
 		Venta nuevaVenta = new Venta();
 		List<Productos> carrito = new ArrayList<Productos>();

@@ -90,6 +90,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 			}else
 			for(Productos prod:productos){
 			   System.out.println("Nombre producto: "+prod.getNombre());
+			   System.out.println("Marca del producto: "+prod.getMarcas().getNombreMarca());
 			   System.out.println("Cantidad: "+prod.getCantidad());
 			}
 			return venta;

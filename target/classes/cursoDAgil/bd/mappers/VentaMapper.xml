@@ -62,6 +62,14 @@
 		<result column="precioVta" property="precioVta" jdbcType="INTEGER" />
 		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
 		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
+		<association property="marcas" column="marcaId"
+			resultMap="MarcaResultMap" />
+	</resultMap>
+	<resultMap id="MarcaResultMap" type="cursoDAgil.bd.domain.Marca">
+
+		<id column="idMarca" property="idMarca" jdbcType="INTEGER" />
+		<result column="nombreMarca" property="nombreMarca" jdbcType="VARCHAR" />
+		
 	</resultMap>
 	<insert id="nuevaVenta" parameterType="cursoDAgil.bd.domain.Venta"
 		useGeneratedKeys="true" keyProperty="idVenta">
@@ -133,7 +141,10 @@
 		prod.precio,
 		prod.precioVta,
 		prod.cantidad,
-		prod.marcaId
+		prod.marcaId,
+		
+		mar.idMarca,
+		mar.nombreMarca
 		
 		FROM equipo2.ventas vtas INNER JOIN cliente AS cli 
 		on vtas.clienteId=cli.id
@@ -142,6 +153,9 @@
 		INNER JOIN productos AS prod 
 		ON
 		dvtas.productoId=prod.idProducto 
+		INNER JOIN marcas AS mar 
+		ON
+		prod.marcaId=mar.idMarca 
 		where vtas.idVenta=#{idVenta}
 		
 	</select>
