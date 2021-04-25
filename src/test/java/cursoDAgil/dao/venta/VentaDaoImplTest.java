@@ -35,19 +35,7 @@ public class VentaDaoImplTest {
 	@Inject
 	ProductosDao productoDao;
 	
-	@Ignore
-	public void pruebaNuevaVenta(){
-		Venta venta=new Venta();
-		System.out.println("Test nueva venta");
-		try{
-			venta.setClienteId(4);
-			venta.setTotalVenta(80.50);
-			venta.setFecha("2011-04-02");
-			ventasDao.nuevaVenta(venta);
-		}catch(Exception e){
-			System.out.println("Error "+e);
-		}
-	}
+	
 	@Ignore
 	public void pruebaObtenerVentas(){
 		int reg;
@@ -77,7 +65,7 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaObtenerVentaConProductosPorId(){
 		
 		Venta venta=new Venta();
@@ -95,11 +83,11 @@ public class VentaDaoImplTest {
 		}
 	}
 	
-	@Transactional
 	
 	
-	@Ignore
-	public void realizarVentas(){
+	
+	@Test
+	public void pruebaNuevaVenta(){
 		Venta nuevaVenta = new Venta();
 		List<Productos> carrito = new ArrayList<Productos>();
 		Cliente cliente = new Cliente();
@@ -107,16 +95,18 @@ public class VentaDaoImplTest {
 		Double totalVenta=0.0;
 		System.out.println("Prueba nueva venta");
 		try {
-			System.out.println("Prueba nueva venta1");
+			
 			mapCliente.put("id", 3);
 			cliente = clienteDao.obtenerClientePorId(mapCliente);	
+			
 			nuevaVenta.setCliente(cliente);
-			System.out.println("Prueba nueva venta2");
+			nuevaVenta.setClienteId(cliente.getId());
+			
 			Map<String, Integer> mapProducto = new HashMap<>();
 			
 			for(int i=4; i<=5; i++){
 				mapProducto.put("idProducto", i);
-				System.out.println("Prueba nueva venta?");
+				
 				Productos producto = new Productos();
 				producto=productoDao.obtenerProductosPorId(mapProducto);
 				assertNotNull(producto);
@@ -132,7 +122,7 @@ public class VentaDaoImplTest {
 			// TODO: handle exception
 			System.out.println("Error: "+e);
 		}
-		
+		System.out.println("Terminado");
 		
 	}
 

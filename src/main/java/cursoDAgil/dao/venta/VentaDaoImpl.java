@@ -104,12 +104,12 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 	public Integer nuevaVenta(Venta venta) {
 		try{
 			int bandera=1;
-			System.out.println("Nope");
+			
 			Double ganancia=0.0;
 			VentaMapper ventaMapper=sqlSession.getMapper(VentaMapper.class);
-			System.out.println("Nope");
+			
 			ventaMapper.nuevaVenta(venta);
-			System.out.println("ide venta: "+venta.getIdVenta());
+			System.out.println("id venta: "+venta.getIdVenta());
 			Integer idVenta = venta.getIdVenta();
 			
 			List<Productos> productos = venta.getProductos();
