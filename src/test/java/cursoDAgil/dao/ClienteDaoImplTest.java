@@ -41,7 +41,7 @@ public class ClienteDaoImplTest {
 		}
 	}
 
-	@Ignore
+	@Test
 	public void pruebaAgregarUnCliente() {
 		Cliente cliente = new Cliente();
 		System.out.println("Test nuevo registro");
@@ -57,12 +57,12 @@ public class ClienteDaoImplTest {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void pruebaConsultarClientePorId() {
 		System.out.println("test consultar cliente por id");
 		Cliente cliente = new Cliente();
 		Map<String, Integer> mapCliente = new HashMap<>();
-		mapCliente.put("id", 1);
+		mapCliente.put("id", 3);
 		try {
 			cliente = clienteDao.obtenerClientePorId(mapCliente);
 			assertNotNull(cliente);
@@ -79,7 +79,7 @@ public class ClienteDaoImplTest {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void pruebaEliminarCliente() {
 		Map<String, Integer> mapCliente = new HashMap<>();
 		mapCliente.put("id", 1);
@@ -93,7 +93,7 @@ public class ClienteDaoImplTest {
 		
 	}
 	
-	@Ignore
+	@Test
 	public void pruebaActualizaCliente() {
 		Cliente cliente = new Cliente();
 		System.out.println("Test actualizar registro");

@@ -21,7 +21,7 @@ import cursoDAgil.bd.domain.Marca;
 public class MarcaDaoImplTest {
 	@Inject
 	MarcaDao marcaDao;
-	@Test
+	@Ignore
 	public void pruebaNuevoRegistro() {
 		Marca marca=new Marca();
 		System.out.println("Test nuevo registro");
@@ -37,14 +37,14 @@ public class MarcaDaoImplTest {
 		Marca marca=new Marca();
 		System.out.println("Test actualizar registro");
 		try{
-			marca.setIdMarca(1);
+			marca.setIdMarca(2);
 			marca.setNombreMarca("Adidas");
 			marcaDao.actualizarMarca(marca);
 		}catch(Exception e){
 			System.out.println("Error: " + e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaConsultarTodo(){
 		int reg;
 		System.out.println("Test consultar todas las marcas");

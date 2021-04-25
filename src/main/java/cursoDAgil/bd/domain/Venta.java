@@ -1,10 +1,31 @@
 package cursoDAgil.bd.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Venta {
 	private	int idVenta;
 	private int clienteId;
 	private double totalVenta;
 	private	String fecha;
+	private Cliente cliente;
+	private List<Productos> productos;
+	public void Ventas(){
+	     setCliente(new Cliente());
+	     setProductos(new ArrayList<Productos>());
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public List<Productos> getProductos() {
+		return productos;
+	}
+	public void setProductos(List<Productos> productos) {
+		this.productos = productos;
+	}
 	public int getIdVenta() {
 		return idVenta;
 	}

@@ -6,7 +6,7 @@
 		<id column="idProducto" property="idProducto" jdbcType="INTEGER"/>
 		<result column="nombre" property="nombre" jdbcType="VARCHAR" />
 		<result column="precio" property="precio" jdbcType="INTEGER" />
-		<result column="preciaVta" property="precioVta" jdbcType="INTEGER" />
+		<result column="precioVta" property="precioVta" jdbcType="INTEGER" />
 		<result column="cantidad" property="cantidad" jdbcType="INTEGER" />
 		<result column="marcaId" property="marcaId" jdbcType="INTEGER" />
 	</resultMap>
