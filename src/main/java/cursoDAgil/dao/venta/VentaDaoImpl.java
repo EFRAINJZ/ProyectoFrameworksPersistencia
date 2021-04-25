@@ -121,6 +121,7 @@ public class VentaDaoImpl implements VentaDao,Serializable {
 						ganancia+=prod.getCantidad()*(prod.getPrecioVta()-prod.getPrecio());
 					}
 					else{
+						detalleVenta.setCantidad(productoExistente.getCantidad());
 						ganancia+=productoExistente.getCantidad()*(prod.getPrecioVta()-prod.getPrecio());
 						productoExistente.setCantidad(0);
 					}

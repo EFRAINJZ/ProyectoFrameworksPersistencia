@@ -89,7 +89,7 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaObtenerVentaConProductosPorId(){
 		
 		Venta venta=new Venta();
@@ -135,7 +135,7 @@ public class VentaDaoImplTest {
 	
 	
 	
-	@Ignore
+	@Test
 	public void pruebaNuevaVenta(){
 		Venta nuevaVenta = new Venta();
 		List<Productos> carrito = new ArrayList<Productos>();
@@ -153,13 +153,13 @@ public class VentaDaoImplTest {
 			
 			Map<String, Integer> mapProducto = new HashMap<>();
 			
-			for(int i=4; i<=5; i++){
+			for(int i=7; i<=8; i++){
 				mapProducto.put("idProducto", i);
 				
 				Productos producto = new Productos();
 				producto=productoDao.obtenerProductosPorId(mapProducto);
 				assertNotNull(producto);
-				producto.setCantidad(2);
+				producto.setCantidad(280);
 				totalVenta+=producto.getCantidad()*producto.getPrecioVta();
 				carrito.add(producto);
 			}
