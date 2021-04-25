@@ -50,7 +50,7 @@ public class DetallesVentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Test
+	@Ignore
 	public void pruebaObtenerDetallesVenta(){
 		int reg;
 		int idVenta=9;
