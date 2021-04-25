@@ -24,7 +24,7 @@ public class ProductosDaoImplTest {
 	@Inject
 	ProductosDao productosDao;
 	
-	@Test
+	@Ignore
 	public void pruebaConsultarTodo() {
 		int reg;
 		System.out.println("Test consultar todos los productos");
@@ -37,7 +37,7 @@ public class ProductosDaoImplTest {
 		}
 	}
 	
-	@Test
+	@Ignore
 	public void nuevoRegistro() {
 		Productos productos = new Productos();
 		System.out.println("Test nuevo registro");
@@ -71,7 +71,7 @@ public class ProductosDaoImplTest {
 		}
 	}
 	
-	@Test
+	@Ignore
 	public void eliminarProducto() {
 		Productos productos = new Productos();
 		System.out.println("Test eliminar un producto por id");

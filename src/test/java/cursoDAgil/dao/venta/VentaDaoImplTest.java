@@ -37,7 +37,7 @@ public class VentaDaoImplTest {
 	ProductosDao productoDao;
 	
 	
-	@Test
+	@Ignore
 	public void pruebaObtenerVentas(){
 		int reg;
 		System.out.println("Test obtener todas las ventas");
