@@ -37,7 +37,7 @@ public class VentaDaoImplTest {
 	ProductosDao productoDao;
 	
 	
-	@Test
+	@Ignore
 	public void pruebaObtenerVentas(){
 		int reg;
 		System.out.println("Test obtener todas las ventas");
@@ -81,7 +81,7 @@ public class VentaDaoImplTest {
 			System.out.println("Error "+e);
 		}
 	}
-	@Ignore
+	@Test
 	public void pruebaObtenerVentaConProductosPorId(){
 		
 		Venta venta=new Venta();
