@@ -59,7 +59,18 @@ public class Direccion {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
-	
+	/**
+	 * Metodo que compara si dos objetos son iguales
+	 * 
+	 */
+	public boolean equals(Object object){
+		if(!(object instanceof Direccion)){
+			return false;
+		}
+		Direccion regDireccion=(Direccion) object;
+		return (this.idDireccion==regDireccion.idDireccion);
+		
+	}
 	
 	
 }

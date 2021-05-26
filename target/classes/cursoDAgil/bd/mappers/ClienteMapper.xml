@@ -44,14 +44,14 @@
 	<insert id="agregarCliente" parameterType="cursoDAgil.bd.domain.Cliente"
 			useGeneratedKeys="true" keyProperty="idCliente">
 	
-		INSERT INTO cliente(nombre, apellido, email, sexo, idDireccion) VALUES (#{nombre},#{apellido},#{email},#{sexo},#{idDireccion})
+		INSERT INTO cliente(nombre, apellido, email, sexo, idDireccion) VALUES (#{nombre},#{apellido},#{email},#{sexo},#{direccion.idDireccion})
 	</insert>
 	
 	<delete id="eliminarCliente" parameterType="hashMap">
 		DELETE FROM cliente WHERE id= #{id}
 	</delete>
 	<update id="actualizaCliente" parameterType="cursoDAgil.bd.domain.Cliente">
-		UPDATE cliente SET nombre=#{nombre}, apellido=#{apellido},email=#{email}, sexo=#{sexo},idDireccion=#{idDireccion} WHERE id=#{id}
+		UPDATE cliente SET nombre=#{nombre}, apellido=#{apellido},email=#{email}, sexo=#{sexo},idDireccion=#{direccion.idDireccion} WHERE id=#{id}
 	</update>
 	
 	<select id="obtenerClientePorId" resultMap="ResultClienteDireccion">

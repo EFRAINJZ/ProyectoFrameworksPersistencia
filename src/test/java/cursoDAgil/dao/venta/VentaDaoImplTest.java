@@ -159,7 +159,7 @@ public class VentaDaoImplTest {
 				Productos producto = new Productos();
 				producto=productoDao.obtenerProductosPorId(mapProducto);
 				assertNotNull(producto);
-				producto.setCantidad(280);
+				producto.setCantidad(i*2);
 				totalVenta+=producto.getCantidad()*producto.getPrecioVta();
 				carrito.add(producto);
 			}

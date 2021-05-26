@@ -36,11 +36,11 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
 			list = clienteMapper.listarTodosClientes();
 			for(Cliente c:list){
-				System.out.println("Id: "+ c.getId());
-				System.out.println("Nombre: "+ c.getNombre());
-				System.out.println("Apellido: "+c.getApellido());
-				System.out.println("Email: "+c.getEmail());
-				System.out.println("Direccion: "+c.getDireccion().getCalle());
+				//System.out.println("Id: "+ c.getId());
+				//System.out.println("Nombre: "+ c.getNombre());
+				//System.out.println("Apellido: "+c.getApellido());
+				//System.out.println("Email: "+c.getEmail());
+				//System.out.println("Direccion: "+c.getDireccion().getCalle());
 			}
 			return list;
 		} catch(Exception e){
@@ -50,10 +50,15 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 	}
 
 	
-	
+	@Override
 	public Integer agregarCliente(Cliente cliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			System.out.println("\nPersisntencia");
+			System.out.println(cliente.getNombre());
+			System.out.println(cliente.getApellido());
+			System.out.println(cliente.getEmail());
+			System.out.println(cliente.getDireccion().getIdDireccion());
 			System.out.println("Cliente creado con éxito");
 			return clienteMapper.agregarCliente(cliente);
 		} catch (Exception e) {
@@ -62,7 +67,7 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 
 		return null;
 	}
-	
+	@Override
 	public Cliente obtenerClientePorId(Map<String,Integer>mapCliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
@@ -74,7 +79,7 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 
 		return null;
 	}
-	
+	@Override
 	public Integer actualizaCliente(Cliente cliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
@@ -87,7 +92,7 @@ public class ClienteDaoImpl implements ClienteDao, Serializable {
 		
 		return null;
 	}
-	
+	@Override
 	public Integer eliminarCliente(Map<String,Integer>mapCliente) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
